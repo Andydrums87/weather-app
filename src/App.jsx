@@ -44,7 +44,7 @@ const apiKey = import.meta.env.VITE_WEATHER_API_KEY
     .then(response => {
       
       setData(response.data);
-      setAllData(response.data)
+      setAllData(response.data);
      
     })
     .catch(error => {

@@ -9,7 +9,7 @@ return  defineConfig({
   define: {
     'process.env.VIT_WEATHER_API_KEY':JSON.stringify(process.env.VITE_WEATHER_API_KEY)
   },
-  base: '/translate-app/',
+  base: '/weather-app/',
   build: {
     outDir: 'dist',
  },

@@ -29,7 +29,6 @@ function App() {
   const [cityName, setCityName] = useState("Helsinki")
   const [allData, setAllData] = useState([])
   const [majorCities, setMajorCities] = useState([])
-  const [city, setCity] = useState("")
   const [userInput, setUserInput] = useState("")
 
   const icons = [Sunny, Clear, Overcast, BrokenClouds, LightRain, HeavyRain, Thunder, Snow, Mist]
@@ -54,13 +53,11 @@ const APIKEY = import.meta.env.VITE_WEATHER_API_KEY
   }
 
   const handleSearch = () => {
-
-    axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${userInput}&limit=1&appid=729f65ddf757252c88da2b6644725c22`)
+    axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${userInput}&limit=1&appid=729f65ddf757252c88da2b6644725c22`)
         .then(response => {
           setLat(response.data[0].lat);
           setLong(response.data[0].lon);
           setCityName(response.data[0].name)
-          
         }) 
         .catch(error => {
           console.log(error, "its an error");
@@ -74,7 +71,7 @@ const APIKEY = import.meta.env.VITE_WEATHER_API_KEY
 
   const handleMajorCities = () => {
 
-    axios.get(`http://api.openweathermap.org/data/2.5/group?id=524901,1273294,2643743&units=${units}&appid=729f65ddf757252c88da2b6644725c22`)
+    axios.get(`https://api.openweathermap.org/data/2.5/group?id=524901,1273294,2643743&units=${units}&appid=729f65ddf757252c88da2b6644725c22`)
         .then(response => {
           setMajorCities(response.data)
           

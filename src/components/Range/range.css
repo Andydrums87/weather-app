@@ -1,0 +1,185 @@
+.range__container {
+  display: block;
+  width:50%;
+}
+.range__slider__box {
+    
+    /* width:350px;; */
+    height:5px;
+    position: relative;
+    background-color: #030616;
+    border-radius: 20px;;
+
+} 
+.range__track {
+    height:10%;
+    position: absolute;
+    border-radius: 20px;;
+}
+
+ .minvalue {
+    position: absolute;
+   
+    background-color:  #20293A;
+    
+    color: white;
+    top:180%;;
+    transform:translate(0, -100%);
+    left:-10%;
+    font-size:0.8rem;
+
+}
+.maxvalue {
+    position: absolute;
+    color: white;
+    bottom:280%;
+    transform:translate(0, 100%);
+    right:-10%;;
+    font-size:0.8rem;
+    
+} 
+
+.min[type="range"] {
+    /* removing default appearance */
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none; 
+    /* creating a custom design */
+    width: 50%;
+    top:16%;
+    cursor: pointer;
+    outline: none;
+
+    /*  slider progress trick  */
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .max[type="range"] {
+    /* removing default appearance */
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none; 
+    /* creating a custom design */
+    width: 60%;
+    left:40%;
+    top:16%;
+    cursor: pointer;
+    outline: none;
+    border-radius: 20px;
+   
+    /*  slider progress trick  */
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+/* Track: webkit browsers */
+.min[type="range"]::-webkit-slider-runnable-track {
+  height: 5px;
+  background: 
+  #4E80EE;
+  border-radius: 20px;
+
+}
+
+/* Track: Mozilla Firefox */
+.min[type="range"]::-moz-range-track {
+  height: 5px;
+  background: 
+  #4E80EE;
+  border-radius: 20px;
+
+}
+
+/* Thumb: webkit */
+.min[type="range"]::-webkit-slider-thumb {
+  /* removing default appearance */
+     /* removing default appearance */
+     -webkit-appearance: none;
+     appearance: none; 
+     /* creating a custom design */
+     height: 0px;
+     width: 0px;
+     background-color: transparent;
+     border: none;
+  /*  slider progress trick  */
+  box-shadow: -407px 0 0 400px #030616;
+}
+
+
+/* Thumb: Firefox */
+.min[type="range"]::-moz-range-thumb {
+     /* removing default appearance */
+     
+     appearance: none; 
+     /* creating a custom design */
+     height: 0px;
+     width: 0px;
+     background-color: transparent;
+  /*  slider progress trick  */
+  box-shadow: -407px 0 0 400px #fff;
+}
+
+
+/* Track: webkit browsers */
+.max[type="range"]::-webkit-slider-runnable-track {
+    height: 5px;
+    background: #030616;
+   
+
+    
+  }
+  
+  /* Track: Mozilla Firefox */
+  .max[type="range"]::-moz-range-track {
+    height: 5px;
+    background: #030616;
+   
+  }
+  
+  /* Thumb: webkit */
+  .max[type="range"]::-webkit-slider-thumb {
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none; 
+    /* creating a custom design */
+    height: 0px;
+    width: 0px;
+    background-color: transparent;
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px #4E80EE;
+
+  
+  }
+  
+  
+  /* Thumb: Firefox */
+  .max[type="range"]::-moz-range-thumb {
+    height: 0px;
+    width: 0px;
+    background-color: transparent;
+   
+    /*  slider progress trick  */
+    box-shadow: -407px 0 0 400px #fff;
+  }
+
+  @media(max-width:640px) {
+      .range__container {
+        width:40%;
+      }
+
+      .maxvalue {
+        right:-20%;
+        font-size: 0.6rem;
+        bottom:200%;
+      }
+      .minvalue {
+        left:-15%;
+        font-size: 0.6rem;
+        margin-right: 5px;;
+      }
+    
+     
+  }
+
+  

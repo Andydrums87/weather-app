@@ -1,0 +1,29 @@
+.search__bar {
+    background-color: #20293A;
+    border-radius: 20px;
+    border:none;
+    width:70%;
+    height:40px;
+    padding-left: 40px;;
+    background-image: url(/src/images/Search.svg);
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    color: #97A3B6;;
+    font-size: 0.75rem;
+}
+
+
+
+.search__bar::placeholder {
+    color:#97A3B6;
+    font-size: 0.75rem;
+}
+
+
+@media(max-width:640px) {
+    .search__bar {
+        width:60%;
+        padding:10px 30px;
+        padding-left:50px;
+    }
+}

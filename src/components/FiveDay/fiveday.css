@@ -1,0 +1,87 @@
+.fiveday__container {
+    grid-column-start:2;
+    grid-column-end:-2;
+    grid-column-end:--1;
+    text-align: start;
+    color: #F2F5F9;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    gap:15px;
+  
+}
+
+.fiveday__container h1 {
+    font-size: 1.2rem;;
+  margin-bottom:5px;
+    font-weight: 400;
+
+ 
+}
+
+
+
+.fiveday__card {
+    width:100%;
+    background-color: #20293A;
+    padding:10px;
+    padding-right: 10%;
+    border-radius: 10px;;
+
+}
+
+figure {
+display: flex;
+width:100%;
+align-items: center;
+
+
+}
+
+figcaption {
+    font-size:10px;
+    color:#97A3B6;
+}
+
+#fiveday__img {
+    width:40px;
+    margin-right: 5px;
+}
+
+
+.list {
+display: flex;
+justify-content: space-between;
+align-items: center;
+    list-style-type: none;
+
+    
+    
+
+  
+}
+
+.list li {
+    display: flex;
+    align-items: center;
+    
+}
+
+
+
+@media(max-width:640px) {
+    .fiveday__container {
+        order:3;
+    }
+
+    #fiveday__img {
+        width:30px;
+    }
+
+    figcaption {
+        margin-right: 5px;;
+        font-size: 0.5rem;;
+    }
+
+    
+}

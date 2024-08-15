@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  background-image: url(./images/earth.png);
+
+  min-height: 100vh;
+  padding: 1rem 3rem;
+  padding-right: 3rem;
+  background-color: #030616;
+  font-family: "Outfit", sans-serif;
+}
+
+.container {
+  display:grid;
+  grid-template-columns: 1.6fr 3fr;
+  grid-template-rows: 50px 1fr 3fr;
+  gap:35px;
+  max-height: 160vh;
+
+}
+
+@media (max-width:640px) {
+  #root {
+    padding:20px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 640px;
+    max-height: 100%;
+  }
+}
+

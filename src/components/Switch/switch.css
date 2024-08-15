@@ -1,0 +1,19 @@
+.switch__container {
+    grid-column-start: 3;
+}
+
+.custom-switch {
+    font-weight:600;
+    
+
+}
+
+
+
+
+@media (max-width:640px) {
+   .switch__container {
+    position: absolute;
+    right:10%;
+   }
+}

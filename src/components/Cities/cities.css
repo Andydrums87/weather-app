@@ -1,0 +1,77 @@
+.cities__container {
+    grid-column-start: 1;
+    color: #F2F5F9;
+    text-align: start;
+ 
+
+}
+
+.cities__container h1 {
+    font-size: 1.2rem;;
+    margin-bottom: 20px;;
+    font-weight: 400;
+
+}
+
+.cities__card {
+    padding:1.5rem;
+    background-color: #20293A;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 20px;;
+    position: relative;
+    border-radius: 20px;;
+}
+
+.cities__card .left {
+    background-color: yellow;
+
+}
+
+.cities__country {
+    font-size: 0.7rem;
+    color:#97A3B6;
+}
+
+.cities__name {
+    font-size:1.5rem;
+    color:#F2F5F9;
+    font-weight: 400;
+}
+
+.cities__description {
+    position: absolute;
+    left:8%;
+    top:70%;
+    font-size: 0.7rem;
+    color:#F2F5F9;
+    font-weight: 200;
+}
+
+.cities__left {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+   
+}
+
+.cities__right {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cities__img {
+    width:40px;
+}
+
+
+@media(max-width:640px) {
+    .cities__container {
+        order:4;
+    }
+}
+

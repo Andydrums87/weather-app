@@ -1,5 +1,4 @@
 import { useState, useEffect, Component } from 'react'
-
 import './App.css'
 import Search from './components/Search/Search'
 import Switch from './components/Switch/Switch'

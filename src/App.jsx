@@ -33,7 +33,8 @@ function App() {
 
   const icons = [Sunny, Clear, Overcast, BrokenClouds, LightRain, HeavyRain, Thunder, Snow, Mist]
 
-const apiKey = process.env.VITE_WEATHER_API_KEY
+const apiKey = import.meta.env.VITE_WEATHER_API_KEY
+
 
   useEffect(() => {
     handleData()

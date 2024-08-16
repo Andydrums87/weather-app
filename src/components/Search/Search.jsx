@@ -8,7 +8,7 @@ function Search ({setUserInput, handleSearch}) {
     }
 
     return (
-        <input className="search__bar" onKeyDown={handleEnter} onChange={(e)=>setUserInput(e.target.value)} type="text" placeholder="Search City..." />
+        <input className="search__bar" onKeyDown={handleEnter} onChange={(e)=>setUserInput(e.target.value)} type="text" placeholder="Search City...." />
         
     )
 }

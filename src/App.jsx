@@ -48,7 +48,7 @@ const apiKey = import.meta.env.VITE_WEATHER_API_KEY
      
     })
     .catch(error => {
-      console.log(error, "its an error");
+      console.log(error, "its an error")
     });
   }
 

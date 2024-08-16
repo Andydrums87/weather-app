@@ -8,19 +8,15 @@ function Hourly({allData, getIcon, data}) {
     const filtered = data.hourly &&  data.hourly.filter((_, i) => i % 3 === 0 && i < 22)
 
 
-
     return (
         <div className="hourly__container" >
               {filtered && filtered.map((n, i) => {
-
+                const date = new Date(n.dt * 1000).toLocaleTimeString("en-US", {hour: '2-digit',
+                    minute: '2-digit'})
+                
                 return (
-                  
                     <div className="hourly__card" key={i}>
-                     
-                        <p className="time">{new Date(n.dt * 1000).toLocaleTimeString("en-US", {hour: '2-digit',
-        minute: '2-digit'})}</p>
-                       
-                   
+                        <p className="time">{date.charAt(0) == 0 ? date.slice(1) : date}</p>
                    {n.weather && n.weather.map((n, i) => {
                     return (
                     <div key={i}>

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import "./hourly.css"
 import Snow from "/src/images/02d.png"
 
-function Hourly({allData, getIcon, data}) {
+function Hourly({getIcon, data, loading}) {
 
 
     const filtered = data.hourly &&  data.hourly.filter((_, i) => i % 3 === 0 && i < 22)
@@ -10,6 +10,7 @@ function Hourly({allData, getIcon, data}) {
 
     return (
         <div className="hourly__container" >
+            {loading ? <p style={{color: "white"}}>......</p> : null}
               {filtered && filtered.map((n, i) => {
                 const date = new Date(n.dt * 1000).toLocaleTimeString("en-US", {hour: '2-digit',
                     minute: '2-digit'})

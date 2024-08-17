@@ -3,15 +3,16 @@ import "./fiveday.css"
 import Range from "../Range/Range";
 
 
-function FiveDay({data,getIcon}) {
+function FiveDay({data,getIcon, loading}) {
 
     return (
         <div className="fiveday__container">
+            {loading ? <p style={{color: "white"}}>......</p> : null}
             <h1>5-day forecast</h1>
             {data.daily && data.daily.slice(0, 5).map((d, index) => {
                 return (
                     <div className="fiveday__card" key={index}>
-                        {d.weather && d.weather.map((c, i) => {
+                        {d.weather && d.weather.map((c) => {
                             return (
                                 <ul className="list" key={index}>
                                     <li>{index === 0 ? "Today" : new Date(d.dt * 1000).toDateString().slice(0, 3)}</li>

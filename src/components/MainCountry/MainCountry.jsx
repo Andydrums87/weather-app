@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./maincountry.css"
 import Wind from "/src/images/wind.png"
 
-function MainCountry({data, getIcon, cityName}) {
+function MainCountry({data, getIcon, cityName, loading}) {
 const [time, setTime] = useState("")
 
 
@@ -20,7 +20,9 @@ useEffect(() => {
     }
  
     return (
+  
         <div className="main__card">
+            {loading ? <p style={{color: "white"}}>.....</p> : null}
             <div className="left">
                 <ul className="left__list">
                 <li className="main__temp">{data.current?.temp.toFixed()}&deg;</li>
@@ -36,7 +38,7 @@ useEffect(() => {
             <div className="right">
                 <ul>
                     <li className="city__name">{cityName}</li>
-                    <li className="main__time">{time}</li>
+                    <li className="main__time">{loading ? "..." : time}</li>
                     <li>
                     <figure className="wind__speed">
                         <img src={Wind} alt="wind speed" id="wind__img"  />

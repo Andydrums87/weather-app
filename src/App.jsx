@@ -30,7 +30,9 @@ function App() {
   const [allData, setAllData] = useState([])
   const [majorCities, setMajorCities] = useState([])
   const [userInput, setUserInput] = useState("")
-  const [searchResult, setSearchResult] = useState('')
+  const [loading, setLoading] = useState(false)
+
+
 
   const icons = [Sunny, Clear, Overcast, BrokenClouds, LightRain, HeavyRain, Thunder, Snow, Mist]
 
@@ -42,11 +44,13 @@ const apiKey = import.meta.env.VITE_WEATHER_API_KEY
   }, [lat, long, units])
 
   const handleData = () => {
-    axios.get(`https://api.openweathermap.org/data/3.0/onecall?units=${units}&lat=${lat}&lon=${long}&appid=729f65ddf757252c88da2b6644725c22`)
+    setLoading(true)
+    axios.get(`https://api.openweathermap.org/data/3.0/onecall?units=${units}&lat=${lat}&lon=${long}&appid=${apiKey}`)
     .then(response => {
       
       setData(response.data);
       setAllData(response.data);
+      setLoading(false)
      
     })
     .catch(error => {
@@ -145,6 +149,7 @@ const getIcon = (data) => {
       data={data}
       cityName={cityName}
       getIcon={getIcon}
+      loading={loading}
       />
       <Cities 
       data={majorCities}
@@ -154,11 +159,13 @@ const getIcon = (data) => {
       allData={allData}
       data={data}
       getIcon={getIcon}
+      loading={loading}
       />
       <FiveDay 
       data={data}
       getIcon={getIcon}
       allData={allData}
+      loading={loading}
       />
     </div>
     

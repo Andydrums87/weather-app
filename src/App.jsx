@@ -36,7 +36,7 @@ function App() {
 
   const icons = [Sunny, Clear, Overcast, BrokenClouds, LightRain, HeavyRain, Thunder, Snow, Mist]
 
-const apiKey = import.meta.env.VITE_WEATHER_API_KEY
+// const apiKey = import.meta.env.VITE_WEATHER_API_KEY
 
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const apiKey = import.meta.env.VITE_WEATHER_API_KEY
 
   const handleData = () => {
     setLoading(true)
-    axios.get(`https://api.openweathermap.org/data/3.0/onecall?units=${units}&lat=${lat}&lon=${long}&appid=${apiKey}`)
+    axios.get(`https://api.openweathermap.org/data/3.0/onecall?units=${units}&lat=${lat}&lon=${long}&appid=${import.meta.env.VITE_WEATHER_API_KEY}`)
     .then(response => {
       
       setData(response.data);

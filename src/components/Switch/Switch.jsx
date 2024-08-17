@@ -19,16 +19,14 @@ function Switch ({setUnits}) {
     onChange={handleChange}
     onColor={"#20293A"}
     offColor={"#20293A"}
-    checkedIcon={<p style={{color: "white"}}>&#160;&#160;C&deg;</p>}
-    uncheckedIcon={<p style={{color: "white"}}>&#160;&#160;F&deg;</p>}
-    uncheckedHandleIcon={<p>&#160;&#160;C&deg;</p>}
-    checkedHandleIcon={<p>&#160;&#160;F&deg;</p>}
+    checkedIcon={<p style={{color: "white"}}>&#160;&#160;&deg;C</p>}
+    uncheckedIcon={<p style={{color: "white"}}>&#160;&#160;&deg;F</p>}
+    uncheckedHandleIcon={<p>&#160;&#160;&deg;C</p>}
+    checkedHandleIcon={<p>&#160;&#160;&deg;F</p>}
     className="custom-switch"
     onHandleColor={ "#fff"}
     offHandleColor={ "#fff"}
   
-    
-    
 />
         </div>
 

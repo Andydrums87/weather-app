@@ -25,7 +25,9 @@ function FiveDay({data,getIcon}) {
                                     {/* <li className="list__description">{c.description}</li> */}
                                     
                              
-                                            <Range allData={data} data={d}/>
+                                            <Range 
+                                            allData={data} 
+                                            data={d}/>
                                             </ul>
                                             )
                                             })}

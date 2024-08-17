@@ -19,6 +19,7 @@ import Mist from "./images/50d.png"
 
 
 
+
 function App() {
 
   const [data, setData] = useState([])
@@ -29,6 +30,7 @@ function App() {
   const [allData, setAllData] = useState([])
   const [majorCities, setMajorCities] = useState([])
   const [userInput, setUserInput] = useState("")
+  const [searchResult, setSearchResult] = useState('')
 
   const icons = [Sunny, Clear, Overcast, BrokenClouds, LightRain, HeavyRain, Thunder, Snow, Mist]
 
@@ -52,12 +54,18 @@ const apiKey = import.meta.env.VITE_WEATHER_API_KEY
     });
   }
 
+
+useEffect(() => {
+  handleSearch()
+})
   const handleSearch = () => {
+
     axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${userInput}&limit=1&appid=729f65ddf757252c88da2b6644725c22`)
         .then(response => {
           setLat(response.data[0].lat);
           setLong(response.data[0].lon);
           setCityName(response.data[0].name)
+         
         }) 
         .catch(error => {
           console.log(error, "its an error");
@@ -70,7 +78,7 @@ const apiKey = import.meta.env.VITE_WEATHER_API_KEY
   }, [])
 
   const handleMajorCities = () => {
-
+      
     axios.get(`https://api.openweathermap.org/data/2.5/group?id=524901,1273294,2643743&units=${units}&appid=729f65ddf757252c88da2b6644725c22`)
         .then(response => {
           setMajorCities(response.data)
@@ -82,8 +90,6 @@ const apiKey = import.meta.env.VITE_WEATHER_API_KEY
        
   }
 
-
- 
 
 
 
@@ -131,20 +137,14 @@ const getIcon = (data) => {
     <div className="container">
       <Search 
       setUserInput={setUserInput}
-      handleSearch={handleSearch}
       />
       <Switch 
-     
-    
-     
       setUnits={setUnits}
       />
-
       <MainCountry 
       data={data}
       cityName={cityName}
       getIcon={getIcon}
-
       />
       <Cities 
       data={majorCities}

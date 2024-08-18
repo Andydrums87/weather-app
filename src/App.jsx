@@ -43,7 +43,7 @@ const apiKey = import.meta.env.VITE_WEATHER_API_KEY
 
   const handleData = () => {
     setLoading(true)
-    axios.get(`https://api.openweathermap.org/data/3.0/onecall?units=${units}&lat=${lat}&lon=${long}&appid=${apiKey}`)
+    axios.get(`https://api.openweathermap.org/data/3.0/onecall?units=${units}&lat=${lat}&lon=${long}&appid=729f65ddf757252c88da2b6644725c22`)
     .then(response => {
       
       setData(response.data);

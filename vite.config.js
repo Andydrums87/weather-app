@@ -3,15 +3,19 @@ import react from '@vitejs/plugin-react'
 
 
 // https://vitejs.dev/config/
-export default () => {
-
-return  defineConfig({
-
+export default defineConfig(({command, mode }) => {
+const env = loadEnv(mode, process.cwd(), '')
+return {
   plugins: [react()],
+  define: {
+    __APP_ENV__: JSON.stringify(env.APP_ENV),
+  },
   base: '/weather-app/',
   build: {
     outDir: 'dist',
  },
-})
 }
+})
+
+
 

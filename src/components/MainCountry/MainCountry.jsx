@@ -15,7 +15,7 @@ useEffect(() => {
 
         if( myString.charAt( 0 ) === '0' )
             myString = myString.slice( 1 );
-        console.log(myString)
+   
         setTime(myString)
     }
  

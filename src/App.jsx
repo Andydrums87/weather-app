@@ -18,8 +18,6 @@ import Snow from "./images/13d.png"
 import Mist from "./images/50d.png"
 
 
-
-
 function App() {
 
   const [data, setData] = useState([])
@@ -29,14 +27,15 @@ function App() {
   const [cityName, setCityName] = useState("Helsinki")
   const [allData, setAllData] = useState([])
   const [majorCities, setMajorCities] = useState([])
-  const [userInput, setUserInput] = useState("")
+  const [userInput, setUserInput] = useState("Helsinki")
   const [loading, setLoading] = useState(false)
 
 
 
-  const icons = [Sunny, Clear, Overcast, BrokenClouds, LightRain, HeavyRain, Thunder, Snow, Mist]
+const icons = [Sunny, Clear, Overcast, BrokenClouds, LightRain, HeavyRain, Thunder, Snow, Mist]
 
 const apiKey = import.meta.env.VITE_WEATHER_API_KEY
+
 
 
   useEffect(() => {
@@ -45,7 +44,7 @@ const apiKey = import.meta.env.VITE_WEATHER_API_KEY
 
   const handleData = () => {
     setLoading(true)
-    axios.get(`https://api.openweathermap.org/data/3.0/onecall?units=${units}&lat=${lat}&lon=${long}&appid=729f65ddf757252c88da2b6644725c22`)
+    axios.get(`https://api.openweathermap.org/data/3.0/onecall?units=${units}&lat=${lat}&lon=${long}&appid=${apiKey}`)
     .then(response => {
       
       setData(response.data);
@@ -61,19 +60,22 @@ const apiKey = import.meta.env.VITE_WEATHER_API_KEY
 
 useEffect(() => {
   handleSearch()
-})
-  const handleSearch = () => {
+}, [setUserInput, userInput])
 
+  const handleSearch = () => {
+   
     axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${userInput}&limit=1&appid=729f65ddf757252c88da2b6644725c22`)
-        .then(response => {
-          setLat(response.data[0].lat);
-          setLong(response.data[0].lon);
-          setCityName(response.data[0].name)
-         
-        }) 
-        .catch(error => {
-          console.log(error, "its an error");
-        });
+    .then(response => {
+      setLat(response.data[0].lat);
+      setLong(response.data[0].lon);
+      setCityName(response.data[0].name)
+     
+    }) 
+    .catch(error => {
+      console.log(error, "error");
+    });
+
+  
        
   }
 

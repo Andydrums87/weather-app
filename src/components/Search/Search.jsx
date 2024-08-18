@@ -11,6 +11,7 @@ function Search ({setUserInput}) {
   apiKey="AIzaSyCR1HgpSwAqufJ4oJAasaBWUDUcQAfXqi8"
   onPlaceSelected={(place => {
  setUserInput(place.address_components[0].long_name) 
+ loading={async}
 
   })}
   style={{ 
